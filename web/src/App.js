@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState ,useEffect } from 'react';
 import './global.css';
 import './App.css';
 import './Sidebar.css';
@@ -8,11 +8,18 @@ import './Main.css';
 
 
 function App() {
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position)
-      },
+        const { latitude, longitude } = position.coords;
+
+        setLatitude(latitude);
+        setLongitude(longitude);
+      }, 
       (err) => {
         console.log(err);
       },
@@ -27,12 +34,12 @@ function App() {
       <aside>
         <strong>Cadastrar</strong>
         <form>
-          <div class="input-block">
+          <div className="input-block">
             <label htmlFor="github_username">Usuário do Github</label>
             <input name="github_username" id="github_username" required></input>
           </div>
           
-        <div class="input-block">
+        <div className="input-block">
           <label htmlFor="techs">Tecnologias</label>
           <input name="techs" id="techs" required></input>
         </div>
@@ -40,12 +47,12 @@ function App() {
          <div className="input-group">
          <div class="input-block">
           <label htmlFor="latitude">Latitude</label>
-          <input name="latitude" id="latitude" required></input>
+          <input type="number" name="latitude" id="latitude" required value={latitude}></input>
         </div>
 
-        <div class="input-block">
+        <div className="input-block">
           <label htmlFor="longitude">Longitude</label>
-          <input name="longitude" id="longitude" required></input>
+          <input type="number" name="longitude" id="longitude" required value={longitude}></input>
         </div>
          </div>
 

@@ -42,6 +42,14 @@ module.exports = {
         
             
         return res.json(dev);
-    }
+    },
+
+    async update() {
+
+    },
+
+    async destroy() {
+
+    },
     
 };

@@ -9,6 +9,7 @@ import './Main.css';
 
 
 function App() {
+  const [devs, setDevs] =  useState([]); 
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [github_username, setGithubUsername] = useState('');
@@ -38,8 +39,12 @@ function App() {
 
   useEffect(() => {
     async function loadDevs() {
-      
+      const response = await api.get('/devs');
+
+      setDevs(response.data);
     }
+
+    loadDevs();
   }, []);
 
   async function handleAddDev(e) {

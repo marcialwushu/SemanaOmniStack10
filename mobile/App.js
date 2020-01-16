@@ -4,8 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello OmniStack</Text>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.title}>Hello OmniStack!!!</Text>
     </View>
   );
 }

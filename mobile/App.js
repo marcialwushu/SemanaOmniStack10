@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Hello OmniStack</Text>
       <Text>Open up App.js to start working on your app!</Text>
     </View>
   );
@@ -12,8 +13,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#7159c1',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#fff',
+  }
 });

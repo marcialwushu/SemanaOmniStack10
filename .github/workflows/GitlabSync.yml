@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: marcialwushu/SemanaOmniStack10
+    - uses: marcialwushu/SemanaOmniStack10@v0.1.0
       with:
         # Such as https://github.com/marcialwushu/SemanaOmniStack10.git
         target-url: ${{ secrets.TARGET_URL }}
